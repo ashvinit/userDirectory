@@ -1,0 +1,9 @@
+.title {
+    color: white;
+    text-align:center;
+    font-family:Verdana;
+    font-variant:small-caps;
+    letter-spacing:10px;
+    background-color:#4682B4;
+    height: 50px;
+}
