@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "./components/Header"
+import Header from "./components/Header";
+import UserTable from "./components/UserTable";
 
 function App () {
     return (
         <div>
             <Header />
+            <UserTable />
             
         </div>
     )
