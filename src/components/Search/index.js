@@ -1,11 +1,12 @@
 import React from "react";
+import "./style.css";
 import { MDBCol, MDBInput } from "mdbreact";
 
 function Search () {
     return (
         <div>
-            <MDBCol md="6">
-                <MDBInput hint="Search" type="text" containerClass="active-pink active-pink-2 mt-0 mb-3" />
+            <MDBCol md="3">
+                <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
             </MDBCol>
         </div>
     )
