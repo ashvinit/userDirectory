@@ -15,8 +15,8 @@ export default function TopSearch() {
                 },
             },
             {
-                label: 'Last',
-                field: 'lastName',
+                label: 'Name',
+                field: 'name',
                 width: 270,
             },
             {
@@ -47,9 +47,14 @@ export default function TopSearch() {
     useEffect(() => {
         API.getUsers().then(res => {
             console.log(res);
-            
+            const rows = res.data.results.map ((user) => {
+                return {
+                    picture: <img src={user.picture.medium} />,
+                    name: user.name.first + " " + user.name.last,
+                }
+            })
             setDatatable((oldState) => {
-                return {...oldState, rows: res.data.data}
+                return {...oldState, rows: rows}
             })
         })
     },[])
