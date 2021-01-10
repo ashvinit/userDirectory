@@ -8,7 +8,8 @@ export default function TopSearch() {
             {
                 label: 'Image',
                 field: 'picture',
-                width: 150,
+                sort: 'disabled',
+                width: 200,
                 attributes: {
                     'aria-controls': 'DataTable',
                     'aria-label': 'Name',
@@ -20,37 +21,35 @@ export default function TopSearch() {
                 width: 270,
             },
             {
-                label: 'Office',
-                field: 'office',
+                label: 'Phone',
+                field: 'phone',
                 width: 200,
             },
             {
-                label: 'Age',
-                field: 'age',
-                sort: 'asc',
-                width: 100,
+                label: 'Email',
+                field: 'email',
+                width: 200,
             },
             {
-                label: 'Start date',
-                field: 'date',
+                label: 'DOB',
+                field: 'dob',
                 sort: 'disabled',
                 width: 150,
-            },
-            {
-                label: 'Salary',
-                field: 'salary',
-                sort: 'disabled',
-                width: 100,
-            },
+            }
         ]
     });
     useEffect(() => {
         API.getUsers().then(res => {
             console.log(res);
             const rows = res.data.results.map ((user) => {
+                
                 return {
                     picture: <img src={user.picture.medium} />,
                     name: user.name.first + " " + user.name.last,
+                    phone: user.cell,
+                    email: user.email,
+                    dob: user.dob.date.slice(0,10)
+
                 }
             })
             setDatatable((oldState) => {
