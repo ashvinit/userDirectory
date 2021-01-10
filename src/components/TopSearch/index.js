@@ -42,9 +42,9 @@ export default function TopSearch() {
         API.getUsers().then(res => {
             console.log(res);
             const rows = res.data.results.map ((user) => {
-                
+
                 return {
-                    picture: <img src={user.picture.medium} />,
+                    picture: <img src={user.picture.medium} style={{borderRadius:"50%"}} />,
                     name: user.name.first + " " + user.name.last,
                     phone: user.cell,
                     email: user.email,
