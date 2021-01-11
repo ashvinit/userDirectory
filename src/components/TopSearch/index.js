@@ -28,6 +28,7 @@ export default function TopSearch() {
             {
                 label: 'Email',
                 field: 'email',
+                type: 'email',
                 width: 200,
             },
             {
